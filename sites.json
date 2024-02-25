@@ -1,0 +1,65 @@
+[
+  {
+    "name": "https://justjoin.it/",
+    "url": "https://justjoin.it/all-locations/python/experience-level_junior",
+    "url_pattern": "href=\\\"/offers/([^\\'\"]+)",
+    "url_part_fill": "offers/",
+    "scrapper":
+    [
+      {
+        "pattern": "\"workingTime\":{\"label\":\"(.*?)\",\"value\"",
+        "meanings": [
+          "time"
+        ]
+      },
+      {
+        "pattern": "\"experienceLevel\":{\"label\":\"(.*?)\",\"value\"",
+        "meanings": [
+          "experience"
+        ]
+      },
+      {
+        "pattern": "\"employmentTypes\":\\[\\{\"to\":.*?,\"from\":.*?,\"type\":\"(.*?)\",",
+        "meanings": [
+          "contract"
+        ]
+      },
+      {
+        "pattern": "\"workplaceType\":{\"label\":\"(.*?)\",\"value\":",
+        "meanings": [
+          "where"
+        ]
+      },
+      {
+        "pattern":"\"companyName\":\"(.*?)\",",
+        "meanings": [
+          "company"
+        ]
+      },
+      {
+        "pattern": "\"city\":\"(.*?)\",\"street\"",
+        "meanings": [
+          "city"
+        ]
+      },
+      {
+        "pattern": "offer\":{\"slug\":\".*?\",\"title\":\"(.*?)\",\"experienceLevel",
+        "meanings": [
+          "job"
+        ]
+      },
+      {
+        "pattern": "\"requiredSkills\":(.*?),\"niceToHaveSkills\"",
+        "meanings": [
+          "skills"
+        ]
+      },
+      {
+        "pattern": "\"fromPln\":(.*?),\"toPln\":(.*?),",
+        "meanings": [
+          "gross"
+        ]
+      }
+    ]
+  }
+]
